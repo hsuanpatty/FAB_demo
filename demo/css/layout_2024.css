@@ -855,580 +855,290 @@ ul.footer-social li a img {
 .floating-menu{
     position: fixed;
     right: 20px;
-    bottom: 20px;
+    bottom: 50px;
     z-index: 999;
     padding-bottom: 58px;
 }
 
 
 /* ==========================
-   TOP
+   回到頂部 
 ========================== */
-
 .gotop-fixed {
     position: absolute;
     right: 0;
-    top: 58px;
-    width: 50px;
-    height: 50px;
-
+    top: 86px;                  /* 保持與下方按鈕的距離，避免黏在一起 */
+    width: 74px;
+    height: 74px;
     border-radius: 50%;
-    background: #000000d2;
-    color: #fff;
-
+    background: #F7F4F0;       /* 柔和奶茶色背景 */
+    color: rgb(206 34 34);        
+    border: 2px solid #E2DAD2; /* 柔和邊框 */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-decoration: none;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
-
-    transition: .3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(140, 109, 98, 0.15);
     box-sizing: border-box;
+    z-index: 10;
+    gap: 2px;                  /* 稍微收窄間距，讓更大的圖標與文字完美容納 */
+    padding-bottom: 2px;
 }
 
 .gotop-fixed i {
-    font-size: 30px;
-    line-height: 1;
-    transform: translateY(-2px);
-    transition: transform .3s ease;
+    font-size: 40px;       
+    line-height: 0.6;         /* 壓縮行高，避免上下留白過多 */
+    transform: none;
+    transition: transform 0.3s ease;
 }
 
-/* 滑鼠移到圓圈時，箭頭往上 */
+.gotop-fixed span {
+    display: block;
+    font-size: 15px;             /* 放大文字尺寸（原 14px） */
+    font-weight: bold;           /* 加粗字體使其更清晰 */
+    letter-spacing: .03rem;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.gotop-fixed:hover {
+    background: #EFEBE6;
+    border-color: #D4CBC2;
+    box-shadow: 0 6px 16px rgba(140, 109, 98, 0.25);
+}
+
 .gotop-fixed:hover i {
-    transform: translateY(-6px);
+    transform: translateY(-3px);
+}
+
+.gotop-fixed:hover span {
+    transform: translateY(-1px);
 }
 
 /* ==========================
-   展開按鈕
+   展開按鈕 (聯絡我們)
 ========================== */
-
-/* .menu-toggle{
-    position: relative;
-
-    width: 50px;
-    height: 50px;
-
-    border: 0;
-    border-radius: 50%;
-
-    background: #e75b5b;
-    color: #fff;
-
-    font-size: 20px;
-    cursor: pointer;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.18);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: .3s;
-    box-sizing: border-box;
-} */
-
 .menu-toggle {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 74px;
+    height: 74px;
     border: 0;
     border-radius: 50%;
     border-bottom-right-radius: 0;
-    background: #e75b5b;
+    background: linear-gradient(135deg, #ec6b6b 0%, #e75b5b 100%);
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, .18);
+    box-shadow: 0 6px 16px rgba(231, 91, 91, 0.3);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: .3s;
+    gap: 5px;                  /* 調整 Icon 與文字間距 */
+    padding-left: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
+    z-index: 11;
+    padding-bottom: 3px;
 }
 
-.menu-toggle:hover{
-    transform: scale(1.05);
+.menu-toggle:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 20px rgba(231, 91, 91, 0.4);
 }
 
-
-/* 分享 icon */
-
-.menu-toggle i{
-    position: relative;
-    z-index: 2;
-    transition: opacity .2s ease;
-}
-
-
-/* ==========================
-   X
-========================== */
-
-.menu-toggle::before,
-.menu-toggle::after{
-    content: '';
-
-    position: absolute;
-
-    width: 20px;
-    height: 3px;
-
-    background: #fff;
-    border-radius: 2px;
-
-    opacity: 0;
-
-    transition:
-        transform .25s ease,
-        opacity .25s ease;
-}
-
-/* ... */
-.more-dots-vertical {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+.contact-icon {
+    display: block;
     width: 24px;
     height: 24px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.2s ease;
 }
 
-.more-dots-vertical i {
+.menu-label {
     display: block;
-    width: 4px;
-    height: 4px;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-/* 滑鼠移到整個按鈕時，三個點依序跳動 */
-.menu-toggle:hover .more-dots-vertical i {
-    animation: dots-bounce .6s ease-in-out infinite;
-}
-
-.menu-toggle:hover .more-dots-vertical i:nth-child(2) {
-    animation-delay: .1s;
-}
-
-.menu-toggle:hover .more-dots-vertical i:nth-child(3) {
-    animation-delay: .2s;
-}
-
-@keyframes dots-bounce {
-    0%, 60%, 100% {
-        transform: translateY(0);
-    }
-
-    30% {
-        transform: translateY(-4px);
-    }
-}
-
-/* 展開後隱藏分享 icon */
-
-.floating-menu.active .menu-toggle i{
-    opacity: 0;
-}
-
-
-/* 展開後 X */
-
-.floating-menu.active .menu-toggle::before{
-    opacity: 1;
-    transform: rotate(45deg);
-}
-
-.floating-menu.active .menu-toggle::after{
-    opacity: 1;
-    transform: rotate(-45deg);
-}
-
-
-/* ==========================
-   MENU 文字
-========================== */
-
-.menu-label{
-    position: absolute;
-
-    right: 58px;
-    top: 50%;
-
-    transform:
-        translateY(-50%)
-        translateX(10px);
-
-    background: #e75b5b;
+    position: static;
     color: #fff;
-
-    font-size: 14px;
-    letter-spacing: 0.05rem;
-    font-weight: bold;
+    font-size: 14px;           /* 同步放大「聯絡我們」字體，與 TOP 保持一致的大小級距 */
+    letter-spacing: 0;
+    font-weight: 700;
     line-height: 1;
-
+    text-align: center;
     white-space: nowrap;
-
-    padding: 8px 12px;
-    border-radius: 4px;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: all .3s ease;
-
-    pointer-events: none;
+    z-index: 2;
+    
 }
 
-
-/* 文字右側箭頭 */
-
-.menu-label::after{
+/* X 按鈕 */
+.menu-toggle::before,
+.menu-toggle::after {
     content: '';
-
     position: absolute;
-
-    right: -6px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    border-width: 5px 0 5px 6px;
-    border-style: solid;
-
-    border-color:
-        transparent
-        transparent
-        transparent
-        #e75b5b;
-}
-
-
-/* 未展開 hover 顯示 */
-
-.floating-menu:not(.active)
-.menu-toggle:hover
-.menu-label{
-    opacity: 1;
-    visibility: visible;
-
-    transform:
-        translateY(-50%)
-        translateX(0);
-}
-
-
-/* 展開後隱藏 */
-
-.floating-menu.active .menu-label{
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
     opacity: 0;
-    visibility: hidden;
-
-    transform:
-        translateY(-50%)
-        translateX(10px);
+    transition: transform 0.25s ease, opacity 0.25s ease;
 }
+
+.floating-menu.active .contact-icon { opacity: 0; }
+.floating-menu.active .menu-label { opacity: 0; visibility: hidden; }
+.floating-menu.active .menu-toggle::before { opacity: 1; transform: rotate(45deg); }
+.floating-menu.active .menu-toggle::after { opacity: 1; transform: rotate(-45deg); }
 
 
 /* ==========================
-   展開選單
+   展開選單容器
 ========================== */
-.menu-items{
+.menu-items {
     position: absolute;
-
-    right: 58px;
-    top: -25px;
-
+    right: 86px;
+    top: -12px;
     width: 0;
     height: 0;
-    padding: 10px 5px;
-
+    padding: 10px 6px;
     display: flex;
     align-items: stretch;
-
-    /* 白色背景 */
-    background: #ffffffe1;
-
-    /* 淡灰色邊框 */
-    border: 1px solid #c2c2c2;
-
-    /* 圓角 */
-    border-radius: 8px;
-
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
     overflow: hidden;
-
     opacity: 0;
     visibility: hidden;
-
     pointer-events: none;
-
-    /* 柔和陰影 */
-    box-shadow:
-        0 5px 18px rgba(0,0,0,.10),
-        0 1px 4px rgba(0,0,0,.04);
-
-    transition:
-        width .35s ease,
-        opacity .25s ease,
-        visibility .25s ease;
-
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, visibility 0.25s ease;
     box-sizing: border-box;
+    z-index: 9;
 }
 
-
-/* ==========================
-   展開後選單
-========================== */
-
-.floating-menu.active .menu-items{
-    width: 250px;
-    height: 100px;
-
+.floating-menu.active .menu-items {
+    width: 258px;              /* 放大展開後的總寬度，容納放大後的選項 */
+    height: 104px;             /* 放大展開後的總高度，比例更舒服 */
     opacity: 1;
     visibility: visible;
-
     pointer-events: auto;
 }
 
-
-/* ==========================
-   每一個項目
-========================== */
-
-.menu-item{
+.menu-item {
     position: relative;
-
     flex: 1;
-    width: 88px;
-    height: 80px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    justify-content: center;
-
+    justify-content: center;   /* 垂直置中 */
     text-decoration: none;
-
-    /* 主要文字顏色 */
     color: #555;
-
-    box-sizing: border-box;
-
-    transition:
-        background .25s ease,
-        transform .25s ease;
+    text-align: center;        /* 水平置中 */
+    transition: background 0.2s ease;
 }
 
+.menu-item:hover { background: rgba(190, 37, 58, 0.04); }
 
-/* ==========================
-   中間分隔線
-========================== */
-
-.menu-item + .menu-item::before{
+.menu-item + .menu-item::before {
     content: '';
-
     position: absolute;
-
     left: 0;
-    top: 14px;
-
+    top: 18px;
     width: 1px;
-    height: 52px;
-
-    /* 淡灰色 */
-    background: #dedede;
+    height: 64px;
+    background: #eaeaea;
 }
 
-
-/* ==========================
-   Hover
-========================== */
-
-/* .menu-item:hover{
-    background: #fafafa;
-} */
-
-
-/* ==========================
-   ICON
-========================== */
-
-.menu-item img{
-    width: 34px;
+.menu-item img {
+    width: 34px;               /* 放大選單圖標 */
     height: 34px;
-
-    object-fit: contain;
-
-    display: block;
-
     margin-bottom: 5px;
-
-    transition: transform .25s ease;
+    object-fit: contain;
+    transition: transform 0.25s ease;
 }
 
+.menu-item:hover img { transform: scale(1.1); }
 
-/* icon hover 微微放大 */
-
-.menu-item:hover img{
-    transform: scale(1.06);
-}
-
-
-/* ==========================
-   文字
-========================== */
-
-.menu-item span{
-    display: block;
-
-    /* 深灰，比純黑柔和 */
-    color: #696868;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    letter-spacing: .04em;
-
-    line-height: 1.2;
-
-    text-align: center;
-
+.menu-item span {
+    font-size: 14px;           /* 放大選單文字尺寸與整體對齊 */
+    font-weight: 700;          /* 加粗字體清晰度 */
+    line-height: 1.2;          /* 優化換行行高 */
+    text-align: center;        /* 確保強制置中 */
     white-space: nowrap;
-
-    transition: color .25s ease;
+    transition: color 0.25s ease;
 }
 
-
-/* Hover 文字 */
-
-.menu-item:hover span{
-    color: #333;
-}
+.menu-item:hover span { color: #be253a; }
 
 
 /* ==========================
-   手機版
+   手機版響應式
 ========================== */
-
-@media (max-width: 767px){
-
-    .floating-menu{
-        right: 15px;
-        bottom: 15px;
-
-        padding-bottom: 54px;
+@media (max-width: 767px) {
+    .floating-menu { 
+        right: 15px; 
+        bottom: 15px; 
+        padding-bottom: 54px; 
+    }
+    
+    .menu-toggle { 
+        width: 54px; 
+        height: 54px; 
+        gap: 4px;            
+    }
+    
+    .contact-icon {
+        width: 20px;
+        height: 20px;
     }
 
-
-    /* 按鈕 */
-
-    .menu-toggle{
-        width: 46px;
-        height: 46px;
-
-        font-size: 18px;
+    .menu-label {
+        font-size: 12px;     
     }
 
-
-    /* X */
-
-    .menu-toggle::before,
-    .menu-toggle::after{
-        width: 16px;
+    .gotop-fixed { 
+        width: 54px; 
+        height: 54px; 
+        top: 62px;           
+        gap: 2px;            
+    }
+    
+    .gotop-fixed i { 
+        font-size: 22px; 
+    }
+    
+    .gotop-fixed span {
+        font-size: 12px;     
     }
 
-
-    /* MENU 文字 */
-
-    .menu-label{
-        right: 54px;
-
-        font-size: 13px;
-
-        padding: 7px 10px;
+    .menu-items { 
+        right: 60px; 
+        top: -10px; 
+        padding: 8px 4px;
+    }
+    
+    .floating-menu.active .menu-items { 
+        width: 228px;          /* 手機版展開寬度微調放大 */
+        height: 88px;          /* 手機版展開高度微調放大 */
     }
 
-
-    /* TOP */
-
-    .gotop-fixed{
-        width: 46px;
-        height: 46px;
-
-        top: 54px;
-        right: 0;
+    .menu-item img {
+        width: 28px;           /* 手機版圖標稍微放大 */
+        height: 28px;
+        margin-bottom: 4px;
     }
 
-    .gotop-fixed i{
-        font-size: 25px;
+    .menu-item span {
+        font-size: 12px;       /* 手機版文字放大並保持置中 */
+        line-height: 1.15;
     }
-
-
-    /* ==========================
-       手機展開選單
-    ========================== */
-
-    .menu-items{
-        right: 54px;
-
-        padding: 6px;
-
-        border-radius: 8px;
-    }
-
-
-    .floating-menu.active .menu-items{
-        width: 240px;
-        height: 84px;
-    }
-
-
-    /* ==========================
-       項目
-    ========================== */
-
-    .menu-item{
-        width: 76px;
-        height: 70px;
-    }
-
-
-    /* ==========================
-       分隔線
-    ========================== */
-
-    .menu-item + .menu-item::before{
-        top: 11px;
-        height: 48px;
-    }
-
-
-    /* ==========================
-       ICON
-    ========================== */
-
-    .menu-item img{
-        width: 32px;
-        height: 32px;
-
-        margin-bottom: 3px;
-    }
-
-
-    /* ==========================
-       文字
-    ========================== */
-
-    .menu-item span{
-        font-size: 13px;
-
-        line-height: 1.2;
-
-        letter-spacing: .02em;
-    }
-
 }
+
 /* end */
 
 /* 1200px 以上 */
