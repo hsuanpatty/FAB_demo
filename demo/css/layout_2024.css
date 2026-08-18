@@ -867,13 +867,13 @@ ul.footer-social li a img {
 .gotop-fixed {
     position: absolute;
     right: 0;
-    top: 86px;                  /* 保持與下方按鈕的距離，避免黏在一起 */
+    top: 86px;
     width: 74px;
     height: 74px;
     border-radius: 50%;
-    background: #F7F4F0;       /* 柔和奶茶色背景 */
-    color: rgb(206 34 34);        
-    border: 2px solid #E2DAD2; /* 柔和邊框 */
+    background: #F7F4F0;
+    color: #555;                  /* TOP 文字／圖示改為深灰色 */
+    border: 2px solid #E2DAD2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -883,7 +883,7 @@ ul.footer-social li a img {
     box-shadow: 0 4px 12px rgba(140, 109, 98, 0.15);
     box-sizing: border-box;
     z-index: 10;
-    gap: 2px;                  /* 稍微收窄間距，讓更大的圖標與文字完美容納 */
+    gap: 2px;
     padding-bottom: 2px;
 }
 
