@@ -3909,9 +3909,11 @@
     <script src="./js/date.js"></script>
     <script>
       $(function () {
-        // 展開 / 收合
+        // 手機版：點擊展開 / 收合
         $("#menuToggle").on("click", function () {
-          $(".floating-menu").toggleClass("active");
+          if ($(window).width() <= 767) {
+            $(".floating-menu").toggleClass("active");
+          }
         });
 
         // 回到頂部
