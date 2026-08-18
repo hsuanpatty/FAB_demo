@@ -3461,17 +3461,13 @@
         <!-- 回到頂部 -->
         <a href="javascript:void(0)" id="gotopBtn" class="gotop-fixed" aria-label="回到頂部">
           <i class="fa fa-angle-up"></i>
+          <span>TOP</span>
         </a>
 
         <!-- 展開按鈕 -->
         <button class="menu-toggle" id="menuToggle" aria-label="展開選單">
+          <img src="./images/contact-1-.png" alt="聯絡我們" class="contact-icon" />
           <span class="menu-label">聯絡我們</span>
-          <!-- <i class="fa fa-envelope"></i> -->
-          <span class="more-dots-vertical" aria-label="更多選項">
-            <i></i>
-            <i></i>
-            <i></i>
-          </span>
         </button>
 
         <!-- 展開選單 -->
@@ -3915,44 +3911,7 @@
       $(function () {
         // 展開 / 收合
         $("#menuToggle").on("click", function () {
-          const menu = $(".floating-menu");
-          const label = $(this).find(".menu-label");
-
-          menu.toggleClass("active");
-
-          if (menu.hasClass("active")) {
-            // 展開後隱藏文字
-            label.css({
-              opacity: "0",
-              visibility: "hidden",
-            });
-          } else {
-            // 收合後恢復文字
-            label.css({
-              opacity: "",
-              visibility: "",
-            });
-          }
-        });
-
-        // 滑鼠移入 MENU
-        $("#menuToggle").on("mouseenter", function () {
-          if (!$(".floating-menu").hasClass("active")) {
-            $(this).find(".menu-label").css({
-              opacity: "1",
-              visibility: "visible",
-            });
-          }
-        });
-
-        // 滑鼠移出 MENU
-        $("#menuToggle").on("mouseleave", function () {
-          if (!$(".floating-menu").hasClass("active")) {
-            $(this).find(".menu-label").css({
-              opacity: "0",
-              visibility: "hidden",
-            });
-          }
+          $(".floating-menu").toggleClass("active");
         });
 
         // 回到頂部
