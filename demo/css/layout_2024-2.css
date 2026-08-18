@@ -862,7 +862,10 @@ ul.footer-social li a img {
 
 
 /* ==========================
-   回到頂部 
+   回到頂部
+========================== */
+/* ==========================
+   回到頂部
 ========================== */
 .gotop-fixed {
     position: absolute;
@@ -872,7 +875,7 @@ ul.footer-social li a img {
     height: 74px;
     border-radius: 50%;
     background: #F7F4F0;
-    color: #555;                  /* TOP 文字／圖示改為深灰色 */
+    color: #555;
     border: 2px solid #E2DAD2;
     display: flex;
     flex-direction: column;
@@ -882,28 +885,40 @@ ul.footer-social li a img {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 12px rgba(140, 109, 98, 0.15);
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 20;
     gap: 2px;
     padding-bottom: 2px;
 }
 
 .gotop-fixed i {
-    font-size: 40px;       
-    line-height: 0.6;         /* 壓縮行高，避免上下留白過多 */
+    font-size: 40px;
+    line-height: 0.6;
     transform: none;
     transition: transform 0.3s ease;
 }
 
 .gotop-fixed span {
     display: block;
-    font-size: 15px;             /* 放大文字尺寸（原 14px） */
-    font-weight: 500;           /* 加粗字體使其更清晰 */
+    font-size: 15px;
+    font-weight: 500;
     letter-spacing: .03rem;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
     transition: transform 0.3s ease;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
 }
 
 .gotop-fixed:hover {
@@ -919,6 +934,7 @@ ul.footer-social li a img {
 .gotop-fixed:hover span {
     transform: translateY(-1px);
 }
+
 
 /* ==========================
    展開按鈕 (聯絡我們)
@@ -939,11 +955,11 @@ ul.footer-social li a img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;                  /* 調整 Icon 與文字間距 */
+    gap: 5px;
     padding-left: 2px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
-    z-index: 11;
+    z-index: 21;
     padding-bottom: 3px;
 }
 
@@ -966,17 +982,20 @@ ul.footer-social li a img {
     display: block;
     position: static;
     color: #fff;
-    font-size: 14px;           /* 同步放大「聯絡我們」字體，與 TOP 保持一致的大小級距 */
+    font-size: 14px;
     letter-spacing: 0;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
     z-index: 2;
-    
 }
 
-/* X 按鈕 */
+
+/* ==========================
+   X 按鈕
+   手機版 active 才顯示
+========================== */
 .menu-toggle::before,
 .menu-toggle::after {
     content: '';
@@ -989,60 +1008,131 @@ ul.footer-social li a img {
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.floating-menu.active .contact-icon { opacity: 0; }
-.floating-menu.active .menu-label { opacity: 0; visibility: hidden; }
-.floating-menu.active .menu-toggle::before { opacity: 1; transform: rotate(45deg); }
-.floating-menu.active .menu-toggle::after { opacity: 1; transform: rotate(-45deg); }
-
 
 /* ==========================
    展開選單容器
 ========================== */
 .menu-items {
     position: absolute;
-    right: 86px;
+    right: 92px;                  /* 保持與按鈕的距離，留給橋樑空間 */
     top: -12px;
-    width: 0;
-    height: 0;
+
+    /* 固定尺寸，使用淡入與微幅位移效果 */
+    width: 258px;
+    height: 104px;
+
     padding: 10px 6px;
+
     display: flex;
     align-items: stretch;
+
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
+
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 14px;
-    overflow: hidden;
+
+    overflow: visible;            /* 確保橋樑可以延伸出去 */
+
+    /* 初始隱藏與微幅位移 */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
-    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, visibility 0.25s ease;
+    transform: translateX(10px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12),
+        0 2px 6px rgba(0, 0, 0, 0.04);
+
     box-sizing: border-box;
+
     z-index: 9;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
 }
 
+/* 隱形的滑鼠橋樑（加回這裡） */
+.menu-items::after {
+    content: '';
+    position: absolute;
+    right: -25px;
+    top: 0;
+    width: 25px;
+    height: 100%;
+}
+
+
+/* ==========================
+   電腦版 Hover
+========================== */
+@media (min-width: 768px) {
+    .floating-menu:has(.menu-toggle:hover) .menu-items,
+    .floating-menu:has(.menu-items:hover) .menu-items {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================
+   手機版 active 展開
+========================== */
 .floating-menu.active .menu-items {
-    width: 258px;              /* 放大展開後的總寬度，容納放大後的選項 */
-    height: 104px;             /* 放大展開後的總高度，比例更舒服 */
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transform: translateX(0);
 }
 
+
+/* ==========================
+   X 狀態
+   手機版使用 active
+========================== */
+.floating-menu.active .contact-icon {
+    opacity: 0;
+}
+
+.floating-menu.active .menu-label {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.floating-menu.active .menu-toggle::before {
+    opacity: 1;
+    transform: rotate(45deg);
+}
+
+.floating-menu.active .menu-toggle::after {
+    opacity: 1;
+    transform: rotate(-45deg);
+}
+
+
+/* ==========================
+   選單項目
+========================== */
 .menu-item {
     position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   /* 垂直置中 */
+    justify-content: center;
     text-decoration: none;
     color: #555;
-    text-align: center;        /* 水平置中 */
+    text-align: center;
     transition: background 0.2s ease;
 }
 
-.menu-item:hover { background: rgba(190, 37, 58, 0.04); }
+.menu-item:hover {
+    background: rgba(190, 37, 58, 0.04);
+}
 
 .menu-item + .menu-item::before {
     content: '';
@@ -1055,86 +1145,91 @@ ul.footer-social li a img {
 }
 
 .menu-item img {
-    width: 34px;               /* 放大選單圖標 */
+    width: 34px;
     height: 34px;
     margin-bottom: 5px;
     object-fit: contain;
     transition: transform 0.25s ease;
 }
 
-.menu-item:hover img { transform: scale(1.1); }
+.menu-item:hover img {
+    transform: scale(1.1);
+}
 
 .menu-item span {
-    font-size: 14px;           /* 放大選單文字尺寸與整體對齊 */
-    font-weight: 700;          /* 加粗字體清晰度 */
-    line-height: 1.2;          /* 優化換行行高 */
-    text-align: center;        /* 確保強制置中 */
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
     white-space: nowrap;
     transition: color 0.25s ease;
 }
 
-.menu-item:hover span { color: #be253a; }
+.menu-item:hover span {
+    color: #be253a;
+}
 
 
 /* ==========================
-   手機版響應式
+   平板以下響應式
 ========================== */
 @media (max-width: 767px) {
-    .floating-menu { 
-        right: 15px; 
-        bottom: 15px; 
-        padding-bottom: 54px; 
+
+    .floating-menu {
+        right: 15px;
+        bottom: 15px;
+        padding-bottom: 64px;
     }
-    
-    .menu-toggle { 
-        width: 54px; 
-        height: 54px; 
-        gap: 4px;            
+
+    .menu-toggle {
+        width: 64px;
+        height: 64px;
+        gap: 4px;
     }
-    
+
     .contact-icon {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
     }
 
     .menu-label {
-        font-size: 12px;     
+        font-size: 13px;
     }
 
-    .gotop-fixed { 
-        width: 54px; 
-        height: 54px; 
-        top: 62px;           
-        gap: 2px;            
+    .gotop-fixed {
+        width: 64px;
+        height: 64px;
+        top: 72px;
+        gap: 2px;
+        z-index: 20;
     }
-    
-    .gotop-fixed i { 
-        font-size: 22px; 
+
+    .gotop-fixed i {
+        font-size: 26px;
     }
-    
+
     .gotop-fixed span {
-        font-size: 12px;     
+        font-size: 13px;
     }
 
-    .menu-items { 
-        right: 60px; 
-        top: -10px; 
+    .menu-items {
+        right: 76px;
+        top: -8px;
+
+        width: 248px;
+        height: 94px;
+
         padding: 8px 4px;
-    }
-    
-    .floating-menu.active .menu-items { 
-        width: 228px;          /* 手機版展開寬度微調放大 */
-        height: 88px;          /* 手機版展開高度微調放大 */
     }
 
     .menu-item img {
-        width: 28px;           /* 手機版圖標稍微放大 */
-        height: 28px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 4px;
     }
 
     .menu-item span {
-        font-size: 12px;       /* 手機版文字放大並保持置中 */
+        font-size: 13px;
         line-height: 1.15;
     }
 }
