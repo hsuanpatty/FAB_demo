@@ -934,7 +934,7 @@ ul.footer-social li a img {
     color: #fff;
     font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 6px 16px rgba(231, 91, 91, 0.3);
+    box-shadow: 0 6px 13px rgba(231, 91, 91, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
