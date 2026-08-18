@@ -638,6 +638,7 @@ footer#footer a {
 
 .footer-left {
     width: calc(30% - 1px);
+    margin: auto;
 }
 
 .footer-left h4 {
