@@ -65,7 +65,7 @@ header#header {
   left: 20px;
 }
 
-@media (max-width: 300.98px) {
+@media (max-width: 340.98px) {
     #logo {
         width: 170px;
         top: 0;
