@@ -1,4 +1,4 @@
-/* ===== 公告欄主體 ===== */
+/* ===== å…¬å‘Šæ¬„ä¸»é«” ===== */
 .announcement-container {
   position: fixed;
   top: 0;
@@ -9,7 +9,7 @@
   z-index: 9998;
 }
 
-/* ===== 內層容器 ===== */
+/* ===== å…§å±¤å®¹å™¨ ===== */
 .announcement-container .ann-container {
   display: flex;
   justify-content: space-between;
@@ -18,33 +18,33 @@
   box-sizing: border-box;
   font-size: 17px;
   letter-spacing: 0.1rem;
-  font-family: Segoe UI, Roboto, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, MicrosoftJhengHeiBoldFix, 微軟正黑體, Microsoft JhengHei;
+  font-family: Segoe UI, Roboto, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji, MicrosoftJhengHeiBoldFix, å¾®è»Ÿæ­£é»‘é«”, Microsoft JhengHei;
 }
 
-/* 最大寬度 */
+/* æœ€å¤§å¯¬åº¦ */
 .ann-container {
   width: 95vw;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ===== 文字區塊 ===== */
+/* ===== æ–‡å­—å€å¡Š ===== */
 .announcement-content {
-  flex: 1;   /* 撐開空間 */
+  flex: 1;   /* æ’é–‹ç©ºé–“ */
   line-height: 1.6;
 }
 
-/* 注意 icon */
+/* æ³¨æ„ icon */
 .announcement-content .fa-exclamation-triangle {
   color: #ec0000;
 }
 
-/* 文字 */
+/* æ–‡å­— */
 .announcement-text {
   font-weight: 400
 }
 
-/* 連結 */
+/* é€£çµ */
 .announcement-link {
   color: #353535;
   text-decoration: underline;
@@ -58,7 +58,7 @@
   color:  #ff4d4f;
 }
 
-/* ===== 關閉按鈕 ===== */
+/* ===== é—œé–‰æŒ‰éˆ• ===== */
 .close-btn {
   background: none;
   border: 1px solid #353535;
@@ -76,7 +76,7 @@
   color: #ff4d4f;
 }
 
-/* ===== 手機 ===== */
+/* ===== æ‰‹æ©Ÿ ===== */
 @media (max-width: 768.98px) {
   .announcement-container .ann-container {
     font-size: 15px;  
@@ -122,8 +122,15 @@
   }
 
   .announcement-content {
-    line-height: 1.4;
+    line-height: 1.3;
     padding-right: 8px;
     font-size: 15px;
   }
 }
+
+@media (max-width: 300.98px) {
+  .announcement-content {
+    font-size: 14px;
+  }
+}
+
