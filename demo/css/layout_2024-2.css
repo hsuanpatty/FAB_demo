@@ -864,9 +864,6 @@ ul.footer-social li a img {
 /* ==========================
    回到頂部
 ========================== */
-/* ==========================
-   回到頂部
-========================== */
 .gotop-fixed {
     position: absolute;
     right: 0;
@@ -875,7 +872,7 @@ ul.footer-social li a img {
     height: 74px;
     border-radius: 50%;
     background: #F7F4F0;
-    color: #c44e4e;
+    color: #e75b5b;
     border: 2px solid #E2DAD2;
     display: flex;
     flex-direction: column;
