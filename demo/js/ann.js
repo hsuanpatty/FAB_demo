@@ -26,7 +26,7 @@ $(document).ready(function () {
       headerTop = isNotice ? 48 : 0;
     } else {
       subMenuMargin = isNotice ? 70 : 20;
-      headerTop = isNotice ? 60 : 0;
+      headerTop = isNotice ? 58 : 0;
     }
 
     $(".sub_menu")
