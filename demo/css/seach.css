@@ -491,6 +491,22 @@ input[type=checkbox] {
     }
 }
 
+
+@media (max-width: 340.98px) { 
+    .button-grid,
+    .button-grid-1 {
+      max-width: 95%;
+    }
+
+    #search-sm {
+      width: 95vw !important;
+    }
+
+    .button-grid .button--primary, .button-grid-1 .button--primary {
+        font-size: 14px;
+    }
+}
+
 /* Property Search Form */
 .sass-property-search {
   background-color: white;
@@ -946,6 +962,13 @@ input[type=checkbox] {
     padding-top: 31px;     
     padding-bottom: 8px;  
     font-size: 16px;
+  }
+}
+
+@media (max-width: 340.98px) {
+  #keyWords input,
+  .sass-form-select {           
+    font-size: 15px;
   }
 }
 
