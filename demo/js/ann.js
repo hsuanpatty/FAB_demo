@@ -45,23 +45,25 @@ $(document).ready(function () {
 
       let pushyHeight = "100%";
       let pushyMargin = 0;
-
-      if (windowWidth <= 375) {
-        pushyHeight = isNotice ? "auto" : "100%";
-        pushyMargin = isNotice ? 63 : 0;
-      } else if (windowWidth <= 425) {
-        pushyHeight = isNotice ? "auto" : "100%";
-        pushyMargin = isNotice ? 64 : 0;
-      } else if (windowWidth <= 575) {
-        pushyHeight = isNotice ? "auto" : "100%";
-        pushyMargin = isNotice ? 60 : 0;
-      } else if (windowWidth <= 769) {
-        pushyHeight = isNotice ? "auto" : "100%";
-        pushyMargin = isNotice ? 60 : 0;
-      } else {
-        pushyHeight = isNotice ? "auto" : "100%";
-        pushyMargin = isNotice ? 70 : 0;
-      }
+    if (windowWidth <= 340.98) {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 58 : 0;
+    } else if (windowWidth <= 375) {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 61 : 0;
+    } else if (windowWidth <= 425) {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 61 : 0;
+    } else if (windowWidth <= 575) {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 60 : 0;
+    } else if (windowWidth <= 769) {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 60 : 0;
+    } else {
+      pushyHeight = isNotice ? "auto" : "100%";
+      pushyMargin = isNotice ? 70 : 0;
+    }
 
       $(".pushy-right")
         .css({
