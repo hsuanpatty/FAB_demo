@@ -861,9 +861,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   回到頂部
-========================== */
+/* 回到頂部 */
 .gotop-fixed {
     position: absolute;
     right: 0;
@@ -933,9 +931,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   展開按鈕 (聯絡我們)
-========================== */
+/* 展開按鈕 (聯絡我們) */
 .menu-toggle {
     position: relative;
     width: 74px;
@@ -989,10 +985,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   X 按鈕
-   手機版 active 才顯示
-========================== */
+/* X 按鈕 手機版 active 才顯示 */
 .menu-toggle::before,
 .menu-toggle::after {
     content: '';
@@ -1006,15 +999,12 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   展開選單容器
-========================== */
+/* 展開選單容器 */
 .menu-items {
     position: absolute;
-    right: 92px;                  /* 保持與按鈕的距離，留給橋樑空間 */
+    right: 92px;             
     top: -12px;
 
-    /* 固定尺寸，使用淡入與微幅位移效果 */
     width: 258px;
     height: 104px;
 
@@ -1029,7 +1019,7 @@ ul.footer-social li a img {
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 14px;
 
-    overflow: visible;            /* 確保橋樑可以延伸出去 */
+    overflow: visible;           
 
     /* 初始隱藏與微幅位移 */
     opacity: 0;
@@ -1062,9 +1052,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   電腦版 Hover
-========================== */
+/* 電腦版 Hover */
 @media (min-width: 768px) {
     .floating-menu:has(.menu-toggle:hover) .menu-items,
     .floating-menu:has(.menu-items:hover) .menu-items {
@@ -1076,9 +1064,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   手機版 active 展開
-========================== */
+/* 手機版 active 展開 */
 .floating-menu.active .menu-items {
     opacity: 1;
     visibility: visible;
@@ -1087,10 +1073,7 @@ ul.footer-social li a img {
 }
 
 
-/* ==========================
-   X 狀態
-   手機版使用 active
-========================== */
+/* X 狀態 手機版使用 active */
 .floating-menu.active .contact-icon {
     opacity: 0;
 }
@@ -1179,8 +1162,8 @@ ul.footer-social li a img {
     }
 
     .menu-toggle {
-        width: 64px;
-        height: 64px;
+        width: 65px;
+        height: 65px;
         gap: 5px;
     }
 
@@ -1194,8 +1177,8 @@ ul.footer-social li a img {
     }
 
     .gotop-fixed {
-        width: 64px;
-        height: 64px;
+        width: 65px;
+        height: 65px;
         top: 72px;
         gap: 2px;
         z-index: 20;
