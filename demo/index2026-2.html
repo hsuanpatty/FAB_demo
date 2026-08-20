@@ -18,7 +18,7 @@
     <!-- style -->
     <link rel="stylesheet" type="text/css" href="./css/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./css/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="./css/layout_2024-2.css" />
+    <link rel="stylesheet" type="text/css" href="./css/layout_2024.css" />
     <link rel="stylesheet" type="text/css" href="./css/justputindex_2025.css" />
     <link rel="stylesheet" type="text/css" href="./css/memberArea.css" />
 
@@ -3475,11 +3475,16 @@
         <!-- 展開選單 -->
         <div class="menu-items" id="menuItems">
           <!-- FB -->
-          <a href="https://m.me/artisantour" target="_blank" rel="noopener noreferrer" class="menu-item fb-item" aria-label="FB 私訊">
+          <a
+            href="https://www.facebook.com/messages/thread/305852735217?_rdr"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="menu-item fb-item"
+            aria-label="Facebook客服"
+          >
             <img src="./images/26_ficon_msg.png" alt="FB" />
-            <span>FB<br />私訊</span>
+            <span>Facebook<br />客服</span>
           </a>
-
           <!-- LINE -->
           <a href="https://lin.ee/DYxQgmD" target="_blank" class="menu-item line-item" aria-label="LINE 客服">
             <img src="./images/26_ficon_line.png" alt="LINE" />
@@ -3491,7 +3496,7 @@
           <a href="https://www.artisan.com.tw/About_Artisan.aspx" class="menu-item phone-item" aria-label="門市電話">
             <img src="./images/26_ficon_Contact.png" alt="電話" />
 
-            <span>門市<br />電話</span>
+            <span>全台<br />分公司</span>
           </a>
         </div>
       </div>
@@ -3909,25 +3914,5 @@
 
     <!-- 最後 -->
     <script src="./js/date.js"></script>
-    <script>
-      $(function () {
-        // 手機版：點擊展開 / 收合
-        $("#menuToggle").on("click", function () {
-          if ($(window).width() <= 767) {
-            $(".floating-menu").toggleClass("active");
-          }
-        });
-
-        // 回到頂部
-        $("#gotopBtn").on("click", function () {
-          $("html, body").animate(
-            {
-              scrollTop: 0,
-            },
-            500,
-          );
-        });
-      });
-    </script>
   </body>
 </html>
