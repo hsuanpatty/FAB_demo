@@ -1,22 +1,33 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
   $('#Bcontent1').css("display", "block");
     $('#Bcontent2').css("display", "none");
     $('#Bcontent3').css("display", "none");
   //$('.tablinksc').eq(0).addClass("active");
   // 網頁go top
-  $("#gotop").click(function() {
-    $("html,body").animate({
-      scrollTop: 0
-    }, 500);
-  });
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 300) {
-      $('#gotop').fadeIn("fast");
-    } else {
-      $('#gotop').stop().fadeOut("fast");
-    }
-  });
+$(function () {
 
+    // 手機版：點擊展開 / 收合
+    $("#menuToggle").on("click", function () {
+        if ($(window).width() <= 767) {
+            $(".floating-menu").toggleClass("active");
+        }
+    });
+
+    // 回到頂部
+    $("#gotopBtn").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $("html, body").stop(true, true);
+
+        requestAnimationFrame(function () {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 500);
+        });
+    });
+
+});
   // banner-slider
   $('#banner-owl-carousel').owlCarousel({
     animateOut: 'fadeOut',
